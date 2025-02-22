@@ -17,7 +17,7 @@ def load_and_filter_data(directory):
     
     if not dataframes:
         return None
-    
+    # Drop duplicate data from the previous data capture.
     combined_df = pd.concat(dataframes).drop_duplicates()
     
     # Sorting the data
@@ -37,7 +37,7 @@ def is_valid_version(version):
         return False
 
 def is_file_locked(filepath):
-    """Check if a file is locked by trying to open it in append mode."""
+    #Check if a file is locked by trying to open it in append mode.
     try:
         with open(filepath, 'a'):
             return False
@@ -45,7 +45,7 @@ def is_file_locked(filepath):
         return True
 
 def run_powercli_script(script_path):
-    """Run the PowerCLI script and wait 10 seconds for it to complete."""
+    #Run the PowerCLI script and wait 10 seconds for it to complete.
     try:
         subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-File", script_path], check=True)
         time.sleep(10)  # Wait for the script to finish
@@ -53,12 +53,12 @@ def run_powercli_script(script_path):
         print(f"Error running PowerCLI script: {e}")
 
 def monitor_directory(directory, interval=10):
-    output_directory = "C:\\GCSIT\\HorizonClientMonitor"
+    output_directory = "horizon_client_monitor"
     os.makedirs(output_directory, exist_ok=True)
     output_file = os.path.join(output_directory, "filtered_horizon_sessions.csv")
-    powercli_script = "C:\\Users\\Scrosby\\Documents\\horizon-client-poll.ps1"
+    powercli_script = "horizon-client-poll.ps1"
     
-    buffered_data = None  # Stores new data if file is locked
+    buffered_data = None  # Stores new data if file is not locked
     
     while True:
         print("Running PowerCLI script...")
@@ -85,7 +85,7 @@ def monitor_directory(directory, interval=10):
         time.sleep(interval)  # Wait before checking again
 
 def main():
-    directory = "C:\\Users\\Scrosby\\Documents\\horizon_client_data"  # Updated to absolute path
+    directory = "horizon_client_data"  # Using relative path
     
     if not os.path.exists(directory):
         print("Directory does not exist.")
