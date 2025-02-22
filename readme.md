@@ -27,9 +27,9 @@ data, but reconsidered when I realized how lightweight this temporary solution c
 Simply, this python program polls a Horizon Connection Server periodically and creates an 
 ouput .csv that captures the following data: 
 
------------------------------------------------------------------------------------
-|UserName | MachineName | AgentVersion | ClientAddress | ClientVersion | StartTime|
------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+#|UserName | MachineName | AgentVersion | ClientAddress | ClientVersion | StartTime|
+#-----------------------------------------------------------------------------------
 
 eg. domain\scrosby, VDI-Prodv3-nnnn, 8.4.0, 10.10.10.101, SethsDevice3, 8.13.0, "1/1/2025 10:10:02AM"
 
