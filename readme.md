@@ -26,6 +26,7 @@ data, but reconsidered when I realized how lightweight this temporary solution c
 ## What this is
 Simply, this python program polls a Horizon Connection Server periodically and creates an 
 ouput .csv that captures the following data: 
+
 ```
 -----------------------------------------------------------------------------------
 |UserName | MachineName | AgentVersion | ClientAddress | ClientVersion | StartTime|
@@ -49,5 +50,3 @@ This is something I've needed to use a few times over the years.
 There's a simple credentials script included that should be used under careful advisement. 
 Understand the impacts of storing credentials in your profile data prior to using. You 
 Should also know how to clear this before you use it. If you prefer to store credentials 
-otherwise, edit away. There are places I would never use this method, but it's handy for
-testing/labbing.
