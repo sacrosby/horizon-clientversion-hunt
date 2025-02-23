@@ -43,10 +43,10 @@ that has connected to Horizon for a desktop for as long as this python program r
 
 From there, the endpoint team can chase those legacy puppies down. 
 
-GNU licensed, and I'm likely to improve. 
-This is something I've needed to use a few times over the years. 
+GNU licensed.
 
 ## Need to Know
 There's a simple credentials script included that should be used under careful advisement. 
 Understand the impacts of storing credentials in your profile data prior to using. You 
 Should also know how to clear this before you use it. If you prefer to store credentials 
+in another method, go for it.
